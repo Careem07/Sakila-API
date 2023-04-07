@@ -1,9 +1,13 @@
 package org.iti;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import org.iti.entities.Actor;
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -11,15 +15,14 @@ import jakarta.ws.rs.core.MediaType;
 @Path("myresource")
 public class MyResource {
 
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
+   EntityManagerFactory factory = Persistence.createEntityManagerFactory("sakila");
+   EntityManager em = factory.createEntityManager();
+
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-        return "Got it!";
+    @Produces(MediaType.APPLICATION_XML)
+    public Actor getIt() {
+        Actor actor = em.find(Actor.class,4);
+        System.out.println(actor.getFirstName());
+        return actor;
     }
 }
