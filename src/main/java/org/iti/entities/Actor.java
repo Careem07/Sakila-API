@@ -1,18 +1,21 @@
 package org.iti.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "actor")
-@XmlRootElement
-public class Actor {
+
+public class Actor  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "actor_id", columnDefinition = "SMALLINT UNSIGNED not null")
@@ -34,6 +37,15 @@ public class Actor {
 
     @OneToMany(mappedBy = "actor")
     private Set<FilmActor> filmActors = new LinkedHashSet<>();
+
+    public Actor() {
+    }
+
+    public Actor(String firstName, String lastName, Instant lastUpdate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.lastUpdate = lastUpdate;
+    }
 
     public Integer getId() {
         return id;

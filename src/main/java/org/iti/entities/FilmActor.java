@@ -1,19 +1,24 @@
 package org.iti.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 @Entity
 @Table(name = "film_actor")
-public class FilmActor {
+
+public class FilmActor  implements Serializable {
     @EmbeddedId
     private FilmActorId id;
 
     @MapsId("actorId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "actor_id", nullable = false)
+    @JsonbTransient
     private Actor actor;
 
     @MapsId("filmId")

@@ -3,13 +3,14 @@ package org.iti.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "store")
-public class Store {
+public class Store  implements Serializable {
     @Id
     @Column(name = "store_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;

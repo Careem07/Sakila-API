@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "film_text")
-public class FilmText {
+public class FilmText  implements Serializable {
     @Id
     @Column(name = "film_id", nullable = false)
     private Short id;

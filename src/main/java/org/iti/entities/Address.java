@@ -4,13 +4,14 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "address")
-public class Address {
+public class Address implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "address_id", columnDefinition = "SMALLINT UNSIGNED not null")
@@ -55,6 +56,8 @@ public class Address {
     private Set<Store> stores = new LinkedHashSet<>();
     @OneToMany(mappedBy = "address")
     private Set<Customer> customers = new LinkedHashSet<>();
+    @Column(name = "location", columnDefinition = "GEOMETRY(65535) not null")
+    private Object location;
 
     public Integer getId() {
         return id;

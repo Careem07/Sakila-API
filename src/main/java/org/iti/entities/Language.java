@@ -4,13 +4,14 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "language")
-public class Language {
+public class Language  implements Serializable {
     @Id
     @Column(name = "language_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;

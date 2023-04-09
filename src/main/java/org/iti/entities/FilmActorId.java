@@ -2,6 +2,7 @@ package org.iti.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;

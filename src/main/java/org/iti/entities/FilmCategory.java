@@ -3,11 +3,12 @@ package org.iti.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 @Entity
 @Table(name = "film_category")
-public class FilmCategory {
+public class FilmCategory  implements Serializable {
     @EmbeddedId
     private FilmCategoryId id;
 
