@@ -1,5 +1,6 @@
 package org.iti.dto;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -21,6 +22,7 @@ public class ActorDto implements Serializable {
     private  String lastName;
     @NotNull
     private  Instant lastUpdate;
+    @JsonbTransient
     private  Set<FilmActorDto> filmActors;
 
     public ActorDto() {

@@ -18,7 +18,6 @@ public class FilmActor  implements Serializable {
     @MapsId("actorId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "actor_id", nullable = false)
-    @JsonbTransient
     private Actor actor;
 
     @MapsId("filmId")
