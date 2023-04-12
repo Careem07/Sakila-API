@@ -2,6 +2,7 @@ package org.iti.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -11,6 +12,7 @@ import java.util.Set;
 /**
  * A DTO for the {@link org.iti.entities.Actor} entity
  */
+@XmlRootElement
 public class ActorDto implements Serializable {
     private  Integer id;
     @Size(max = 45)
@@ -39,6 +41,12 @@ public class ActorDto implements Serializable {
         this.lastName = lastName;
         this.lastUpdate = lastUpdate;
         this.filmActors = filmActors;
+    }
+
+    public ActorDto(String firstName, String lastName, Instant lastUpdate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.lastUpdate = lastUpdate;
     }
 
     public void setId(Integer id) {

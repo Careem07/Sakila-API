@@ -10,16 +10,19 @@ import java.util.Objects;
  * A DTO for the {@link org.iti.entities.FilmText} entity
  */
 public class FilmTextDto implements Serializable {
-    private final Short id;
+    private  Short id;
     @Size(max = 255)
     @NotNull
-    private final String title;
-    private final String description;
+    private  String title;
+    private  String description;
 
     public FilmTextDto(Short id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
+    }
+
+    public FilmTextDto() {
     }
 
     public Short getId() {

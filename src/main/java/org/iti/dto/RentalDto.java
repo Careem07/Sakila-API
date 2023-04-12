@@ -10,16 +10,16 @@ import java.util.Objects;
  * A DTO for the {@link org.iti.entities.Rental} entity
  */
 public class RentalDto implements Serializable {
-    private final Integer id;
+    private  Integer id;
     @NotNull
-    private final Instant rentalDate;
-    private final Instant returnDate;
+    private  Instant rentalDate;
+    private  Instant returnDate;
     private InventoryDto inventory;
     private CustomerDto customer;
     private StaffDto staff;
     private PaymentDto payment;
     @NotNull
-    private final Instant lastUpdate;
+    private  Instant lastUpdate;
 
     public RentalDto(Integer id, Instant rentalDate, Instant returnDate, InventoryDto inventory, CustomerDto customer, StaffDto staff, PaymentDto payment, Instant lastUpdate) {
         this.id = id;
@@ -30,6 +30,9 @@ public class RentalDto implements Serializable {
         this.staff = staff;
         this.payment = payment;
         this.lastUpdate = lastUpdate;
+    }
+
+    public RentalDto() {
     }
 
     public Integer getId() {

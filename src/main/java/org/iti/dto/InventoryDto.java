@@ -11,13 +11,13 @@ import java.util.Set;
  * A DTO for the {@link org.iti.entities.Inventory} entity
  */
 public class InventoryDto implements Serializable {
-    private final Integer id;
+    private  Integer id;
     @NotNull
-    private final FilmDto film;
+    private  FilmDto film;
     private StoreDto store;
     @NotNull
-    private final Instant lastUpdate;
-    private final Set<RentalDto> rentals;
+    private  Instant lastUpdate;
+    private  Set<RentalDto> rentals;
 
     public InventoryDto(Integer id, FilmDto film, StoreDto store, Instant lastUpdate, Set<RentalDto> rentals) {
         this.id = id;
@@ -25,6 +25,9 @@ public class InventoryDto implements Serializable {
         this.store = store;
         this.lastUpdate = lastUpdate;
         this.rentals = rentals;
+    }
+
+    public InventoryDto() {
     }
 
     public Integer getId() {

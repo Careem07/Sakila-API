@@ -14,43 +14,34 @@ import java.util.Set;
  * A DTO for the {@link org.iti.entities.Film} entity
  */
 public class FilmDto implements Serializable {
-    private final Integer id;
+    private  Integer id;
     @Size(max = 128)
     @NotNull
-    private final String title;
-    private final String description;
-    private final Integer releaseYear;
-    private final Short rentalDuration;
+    private  String title;
+    private  String description;
+    private  Integer releaseYear;
+    private  Short rentalDuration;
     @NotNull
-    private final BigDecimal rentalRate;
-    private final Integer length;
+    private  BigDecimal rentalRate;
+    private  Integer length;
     @NotNull
-    private final BigDecimal replacementCost;
+    private  BigDecimal replacementCost;
     @Size(max = 5)
-    private final String rating;
+    private  String rating;
     @Size(max = 54)
-    private final String specialFeatures;
+    private  String specialFeatures;
     @NotNull
-    private final Instant lastUpdate;
-    private final Set<FilmActorDto> filmActors;
-    private final Set<FilmCategoryDto> filmCategories;
-    private final Set<InventoryDto> inventories;
+    private  Instant lastUpdate;
 
-    public FilmDto(Integer id, String title, String description, Integer releaseYear, Short rentalDuration, BigDecimal rentalRate, Integer length, BigDecimal replacementCost, String rating, String specialFeatures, Instant lastUpdate, Set<FilmActorDto> filmActors, Set<FilmCategoryDto> filmCategories, Set<InventoryDto> inventories) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.releaseYear = releaseYear;
-        this.rentalDuration = rentalDuration;
-        this.rentalRate = rentalRate;
-        this.length = length;
-        this.replacementCost = replacementCost;
-        this.rating = rating;
-        this.specialFeatures = specialFeatures;
-        this.lastUpdate = lastUpdate;
-        this.filmActors = filmActors;
-        this.filmCategories = filmCategories;
-        this.inventories = inventories;
+    private transient Set<FilmActorDto> filmActors;
+
+    private transient Set<FilmCategoryDto> filmCategories;
+
+    private transient Set<InventoryDto> inventories;
+
+
+
+    public FilmDto() {
     }
 
     public Integer getId() {
@@ -107,6 +98,62 @@ public class FilmDto implements Serializable {
 
     public Set<FilmCategoryDto> getFilmCategories() {
         return filmCategories;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setReleaseYear(Integer releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public void setRentalDuration(Short rentalDuration) {
+        this.rentalDuration = rentalDuration;
+    }
+
+    public void setRentalRate(BigDecimal rentalRate) {
+        this.rentalRate = rentalRate;
+    }
+
+    public void setLength(Integer length) {
+        this.length = length;
+    }
+
+    public void setReplacementCost(BigDecimal replacementCost) {
+        this.replacementCost = replacementCost;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public void setSpecialFeatures(String specialFeatures) {
+        this.specialFeatures = specialFeatures;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public void setFilmActors(Set<FilmActorDto> filmActors) {
+        this.filmActors = filmActors;
+    }
+
+    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
+        this.filmCategories = filmCategories;
+    }
+
+    public void setInventories(Set<InventoryDto> inventories) {
+        this.inventories = inventories;
     }
 
     @Override

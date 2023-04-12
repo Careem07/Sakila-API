@@ -26,13 +26,13 @@ public class FilmCategory  implements Serializable {
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
 
-    public FilmCategoryId getId() {
-        return id;
-    }
-
-    public void setId(FilmCategoryId id) {
-        this.id = id;
-    }
+//    public FilmCategoryId getId() {
+//        return id;
+//    }
+//
+//    public void setId(FilmCategoryId id) {
+//        this.id = id;
+//    }
 
     public Film getFilm() {
         return film;

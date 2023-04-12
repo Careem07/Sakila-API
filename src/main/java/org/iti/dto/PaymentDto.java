@@ -11,12 +11,12 @@ import java.util.Objects;
  * A DTO for the {@link org.iti.entities.Payment} entity
  */
 public class PaymentDto implements Serializable {
-    private final Integer id;
+    private  Integer id;
     @NotNull
-    private final BigDecimal amount;
+    private  BigDecimal amount;
     @NotNull
-    private final Instant paymentDate;
-    private final Instant lastUpdate;
+    private  Instant paymentDate;
+    private  Instant lastUpdate;
     private StaffDto staff;
     private CustomerDto customer;
 
@@ -30,6 +30,9 @@ public class PaymentDto implements Serializable {
         this.staff = staff;
         this.customer = customer;
         this.rental = rental;
+    }
+
+    public PaymentDto() {
     }
 
     public Integer getId() {

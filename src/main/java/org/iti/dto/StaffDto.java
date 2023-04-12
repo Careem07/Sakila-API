@@ -12,28 +12,28 @@ import java.util.Set;
  * A DTO for the {@link org.iti.entities.Staff} entity
  */
 public class StaffDto implements Serializable {
-    private final Short id;
+    private  Short id;
     @Size(max = 45)
     @NotNull
-    private final String firstName;
+    private  String firstName;
     @Size(max = 45)
     @NotNull
-    private final String lastName;
+    private  String lastName;
     @NotNull
-    private final AddressDto address;
-    private final byte[] picture;
+    private  AddressDto address;
+    private  byte[] picture;
     @Size(max = 50)
-    private final String email;
+    private  String email;
     @NotNull
-    private final Boolean active;
+    private  Boolean active;
     @Size(max = 16)
     @NotNull
-    private final String username;
+    private  String username;
     @Size(max = 40)
-    private final String password;
+    private  String password;
     @NotNull
-    private final Instant lastUpdate;
-    private final Set<PaymentDto> payments;
+    private  Instant lastUpdate;
+    private  Set<PaymentDto> payments;
 
     public StaffDto(Short id, String firstName, String lastName, AddressDto address, byte[] picture, String email, Boolean active, String username, String password, Instant lastUpdate, Set<PaymentDto> payments) {
         this.id = id;
@@ -47,6 +47,9 @@ public class StaffDto implements Serializable {
         this.password = password;
         this.lastUpdate = lastUpdate;
         this.payments = payments;
+    }
+
+    public StaffDto() {
     }
 
     public Short getId() {

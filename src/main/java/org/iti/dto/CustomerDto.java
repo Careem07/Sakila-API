@@ -12,26 +12,26 @@ import java.util.Set;
  * A DTO for the {@link org.iti.entities.Customer} entity
  */
 public class CustomerDto implements Serializable {
-    private final Integer id;
+    private  Integer id;
     @NotNull
-    private final StoreDto store;
+    private  StoreDto store;
     @Size(max = 45)
     @NotNull
-    private final String firstName;
+    private  String firstName;
     @Size(max = 45)
     @NotNull
-    private final String lastName;
+    private  String lastName;
     @Size(max = 50)
-    private final String email;
+    private  String email;
     @NotNull
-    private final AddressDto address;
+    private  AddressDto address;
     @NotNull
-    private final Boolean active;
+    private  Boolean active;
     @NotNull
-    private final Instant createDate;
-    private final Instant lastUpdate;
-    private final Set<PaymentDto> payments;
-    private final Set<RentalDto> rentals;
+    private  Instant createDate;
+    private  Instant lastUpdate;
+    private  Set<PaymentDto> payments;
+    private  Set<RentalDto> rentals;
 
     public CustomerDto(Integer id, StoreDto store, String firstName, String lastName, String email, AddressDto address, Boolean active, Instant createDate, Instant lastUpdate, Set<PaymentDto> payments, Set<RentalDto> rentals) {
         this.id = id;
@@ -45,6 +45,9 @@ public class CustomerDto implements Serializable {
         this.lastUpdate = lastUpdate;
         this.payments = payments;
         this.rentals = rentals;
+    }
+
+    public CustomerDto() {
     }
 
     public Integer getId() {

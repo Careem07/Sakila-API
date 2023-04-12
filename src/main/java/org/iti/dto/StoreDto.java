@@ -11,14 +11,14 @@ import java.util.Set;
  * A DTO for the {@link org.iti.entities.Store} entity
  */
 public class StoreDto implements Serializable {
-    private final Short id;
+    private  Short id;
     @NotNull
-    private final AddressDto address;
+    private  AddressDto address;
     @NotNull
-    private final Instant lastUpdate;
-    private final Set<InventoryDto> inventories;
-    private final Set<StaffDto> staff;
-    private final Set<CustomerDto> customers;
+    private  Instant lastUpdate;
+    private  Set<InventoryDto> inventories;
+    private  Set<StaffDto> staff;
+    private  Set<CustomerDto> customers;
 
     public StoreDto(Short id, AddressDto address, Instant lastUpdate, Set<InventoryDto> inventories, Set<StaffDto> staff, Set<CustomerDto> customers) {
         this.id = id;
@@ -27,6 +27,9 @@ public class StoreDto implements Serializable {
         this.inventories = inventories;
         this.staff = staff;
         this.customers = customers;
+    }
+
+    public StoreDto() {
     }
 
     public Short getId() {

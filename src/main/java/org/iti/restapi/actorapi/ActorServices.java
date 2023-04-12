@@ -1,5 +1,6 @@
 package org.iti.restapi.actorapi;
 
+import jakarta.ws.rs.POST;
 import org.iti.dto.ActorDto;
 import org.iti.entities.Actor;
 import org.iti.repositories.RepositoryImpl;
@@ -13,6 +14,7 @@ public class ActorServices {
 
     static RepositoryImpl<Actor> repo = new RepositoryImpl<>(Actor.class);
 
+    @POST
     public ActorDto addActor(ActorDto actorDto){
 
         Actor actor = new ModelMapper().map(actorDto,Actor.class);

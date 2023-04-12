@@ -11,15 +11,18 @@ import java.util.Objects;
  */
 public class FilmCategoryDto implements Serializable {
     private Integer id;
-    private FilmDto film;
+    private transient FilmDto film;
     private CategoryDto categoryDto;
     @NotNull
-    private final Instant lastUpdate;
+    private Instant lastUpdate;
 
     public FilmCategoryDto(FilmDto film, CategoryDto categoryDto, Instant lastUpdate) {
         this.film = film;
         this.categoryDto = categoryDto;
         this.lastUpdate = lastUpdate;
+    }
+
+    public FilmCategoryDto() {
     }
 
     public Instant getLastUpdate() {

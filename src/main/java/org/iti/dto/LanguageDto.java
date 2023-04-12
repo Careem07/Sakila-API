@@ -12,19 +12,22 @@ import java.util.Set;
  * A DTO for the {@link org.iti.entities.Language} entity
  */
 public class LanguageDto implements Serializable {
-    private final Short id;
+    private  Short id;
     @Size(max = 20)
     @NotNull
-    private final String name;
+    private  String name;
     @NotNull
-    private final Instant lastUpdate;
-    private final Set<FilmDto> films;
+    private  Instant lastUpdate;
+    private  Set<FilmDto> films;
 
     public LanguageDto(Short id, String name, Instant lastUpdate, Set<FilmDto> films) {
         this.id = id;
         this.name = name;
         this.lastUpdate = lastUpdate;
         this.films = films;
+    }
+
+    public LanguageDto() {
     }
 
     public Short getId() {

@@ -2,11 +2,10 @@ package org.iti.restapi.actorapi;
 
 
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.iti.dto.ActorDto;
-import org.iti.dto.FilmActorDto;
-import org.iti.entities.Actor;
-import org.modelmapper.ModelMapper;
+
 
 import java.util.List;
 
@@ -17,9 +16,28 @@ public class ActorAPI {
 
 
     @GET
+    @Produces(MediaType.APPLICATION_XML)
     public List<ActorDto> getActors(){
         return services.getActors();
     }
+
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createActor(ActorDto actorDto){
+//        Instant now = Instant.now();
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        String formattedDate = formatter.format(now);
+//        ActorDto actorDto = new ActorDto(first_name,last_name, Instant.parse(formattedDate));
+
+        ActorDto newActor = services.addActor(actorDto);
+
+        if (newActor == null)   return Response.status(Response.Status.FORBIDDEN).build();
+
+        return Response.status(Response.Status.CREATED).entity(newActor).build();
+
+    }
+
 
     @GET
     @Path("{id}")
@@ -52,7 +70,7 @@ public class ActorAPI {
         actorDto.setLastName(lName);
 
         if(services.updateActor(actorDto) == null){
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            return Response.status(Response.Status.NOT_MODIFIED).build();
         }
         return Response.ok(actorDto).build();
     }

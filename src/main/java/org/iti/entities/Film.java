@@ -7,6 +7,8 @@ import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -73,6 +75,9 @@ public class Film  implements Serializable {
 
     @OneToMany(mappedBy = "film")
     private Set<FilmCategory> filmCategories = new LinkedHashSet<>();
+
+    public Film() {
+    }
 
     public Integer getId() {
         return id;
