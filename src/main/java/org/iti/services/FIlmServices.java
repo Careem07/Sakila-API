@@ -1,11 +1,11 @@
-package org.iti.restapi.filmapi;
+package org.iti.services;
 
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
-import org.iti.dto.FilmDto;
+import org.iti.model.dto.FilmDto;
 
-import org.iti.entities.Film;
-import org.iti.entities.Film;
+import org.iti.model.entities.Film;
+import org.iti.model.entities.Film;
 import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;

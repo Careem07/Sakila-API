@@ -1,10 +1,11 @@
-package org.iti.restapi.filmapi;
+package org.iti.api.restapi;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import org.iti.dto.FilmDto;
+import org.iti.model.dto.FilmDto;
+import org.iti.services.FIlmServices;
 
 import java.util.List;
 

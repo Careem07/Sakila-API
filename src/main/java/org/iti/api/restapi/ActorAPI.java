@@ -1,10 +1,11 @@
-package org.iti.restapi.actorapi;
+package org.iti.api.restapi;
 
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.iti.dto.ActorDto;
+import org.iti.model.dto.ActorDto;
+import org.iti.services.ActorServices;
 
 
 import java.util.List;

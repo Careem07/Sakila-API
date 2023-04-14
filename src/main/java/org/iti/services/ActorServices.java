@@ -1,8 +1,8 @@
-package org.iti.restapi.actorapi;
+package org.iti.services;
 
 import jakarta.ws.rs.POST;
-import org.iti.dto.ActorDto;
-import org.iti.entities.Actor;
+import org.iti.model.dto.ActorDto;
+import org.iti.model.entities.Actor;
 import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
