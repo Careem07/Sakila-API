@@ -56,8 +56,7 @@ public class Address implements Serializable {
     private Set<Store> stores = new LinkedHashSet<>();
     @OneToMany(mappedBy = "address")
     private Set<Customer> customers = new LinkedHashSet<>();
-    @Column(name = "location", columnDefinition = "GEOMETRY(65535) not null")
-    private Object location;
+
 
     public Integer getId() {
         return id;

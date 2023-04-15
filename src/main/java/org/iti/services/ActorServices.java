@@ -14,7 +14,7 @@ public class ActorServices {
 
     static RepositoryImpl<Actor> repo = new RepositoryImpl<>(Actor.class);
 
-    @POST
+
     public ActorDto addActor(ActorDto actorDto){
 
         Actor actor = new ModelMapper().map(actorDto,Actor.class);
@@ -40,8 +40,13 @@ public class ActorServices {
         return repo.remove(actor);
     }
 
-    public ActorDto updateActor(ActorDto actorDto){
-        Actor actor = repo.update(new ModelMapper().map(actorDto , Actor.class));
-        return new ModelMapper().map(actor,ActorDto.class);
+    public ActorDto updateActor(int id ,ActorDto actorDto){
+
+        Actor actor = repo.findById(id);
+        actor.setFirstName(actorDto.getFirstName());
+        actor.setLastName(actorDto.getLastName());
+        actor.setLastUpdate(actorDto.getLastUpdate());
+        Actor newActor = repo.update(actor);
+        return new ModelMapper().map(newActor,ActorDto.class);
     }
 }

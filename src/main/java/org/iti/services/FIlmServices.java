@@ -2,8 +2,10 @@ package org.iti.services;
 
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
+import org.iti.model.dto.ActorDto;
 import org.iti.model.dto.FilmDto;
 
+import org.iti.model.entities.Actor;
 import org.iti.model.entities.Film;
 import org.iti.model.entities.Film;
 import org.iti.repositories.RepositoryImpl;
@@ -27,7 +29,6 @@ public class FIlmServices {
 
     public FilmDto getFilmById(int id) {
         Film film = repo.findById(id);
-        System.out.println("film.getDescription() = " + film.getDescription());
         if (film == null) return null;
         return new ModelMapper().map(film, FilmDto.class);
     }
@@ -42,4 +43,17 @@ public class FIlmServices {
         Film film = repo.findById(id);
         return repo.remove(film);
     }
+    public FilmDto updateFilm(int id , FilmDto filmDto){
+
+        Film film = repo.findById(id);
+        film.setDescription(filmDto.getDescription());
+        film.setRating(filmDto.getRating());
+        film.setLength(filmDto.getLength());
+        film.setTitle(filmDto.getTitle());
+        film.setRentalDuration(filmDto.getRentalDuration());
+        film.setReleaseYear(filmDto.getReleaseYear());
+        Film newFilm = repo.update(film);
+        return new ModelMapper().map(newFilm,FilmDto.class);
+    }
+
 }

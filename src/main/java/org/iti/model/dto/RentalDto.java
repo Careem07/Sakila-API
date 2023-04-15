@@ -1,14 +1,16 @@
 package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 /**
- * A DTO for the {@link org.iti.entities.Rental} entity
+ * A DTO for the {@link org.iti.model.entities.Rental} entity
  */
+@XmlRootElement
 public class RentalDto implements Serializable {
     private  Integer id;
     @NotNull

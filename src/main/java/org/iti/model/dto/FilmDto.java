@@ -3,6 +3,7 @@ package org.iti.model.dto;
 import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -11,8 +12,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * A DTO for the {@link org.iti.entities.Film} entity
+ * A DTO for the {@link org.iti.model.entities.Film} entity
  */
+@XmlRootElement
 public class FilmDto implements Serializable {
     private  Integer id;
     @Size(max = 128)

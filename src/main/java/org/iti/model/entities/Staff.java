@@ -69,6 +69,9 @@ public class Staff  implements Serializable {
     @OneToMany(mappedBy = "staff")
     private Set<Rental> rentals = new LinkedHashSet<>();
 
+    public Staff() {
+    }
+
     public Short getId() {
         return id;
     }

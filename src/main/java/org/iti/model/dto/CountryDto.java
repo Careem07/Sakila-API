@@ -2,6 +2,7 @@ package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -9,8 +10,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * A DTO for the {@link org.iti.entities.Country} entity
+ * A DTO for the {@link org.iti.model.entities.Country} entity
  */
+@XmlRootElement
 public class CountryDto implements Serializable {
     private  Integer id;
     @Size(max = 50)

@@ -1,5 +1,6 @@
 package org.iti.model.dto;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -9,31 +10,31 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * A DTO for the {@link org.iti.entities.Staff} entity
+ * A DTO for the {@link StaffDto} entity
  */
 public class StaffDto implements Serializable {
-    private  Short id;
+    private Short id;
     @Size(max = 45)
     @NotNull
-    private  String firstName;
+    private String firstName;
     @Size(max = 45)
     @NotNull
-    private  String lastName;
-    @NotNull
-    private  AddressDto address;
-    private  byte[] picture;
+    private String lastName;
+    private AddressDto address;
+    @JsonbTransient
+    private byte[] picture;
     @Size(max = 50)
-    private  String email;
+    private String email;
     @NotNull
-    private  Boolean active;
+    private Boolean active;
     @Size(max = 16)
     @NotNull
-    private  String username;
+    private String username;
     @Size(max = 40)
-    private  String password;
+    private String password;
     @NotNull
-    private  Instant lastUpdate;
-    private  Set<PaymentDto> payments;
+    private Instant lastUpdate;
+    private Set<PaymentDto> payments;
 
     public StaffDto(Short id, String firstName, String lastName, AddressDto address, byte[] picture, String email, Boolean active, String username, String password, Instant lastUpdate, Set<PaymentDto> payments) {
         this.id = id;
@@ -92,9 +93,53 @@ public class StaffDto implements Serializable {
         return lastUpdate;
     }
 
-    public Set<PaymentDto> getPayments() {
-        return payments;
+//    public Set<PaymentDto> getPayments() {
+//        return payments;
+//    }
+
+    public void setId(Short id) {
+        this.id = id;
     }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAddress(AddressDto address) {
+        this.address = address;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+//    public void setPayments(Set<PaymentDto> payments) {
+//        this.payments = payments;
+//    }
 
     @Override
     public boolean equals(Object o) {

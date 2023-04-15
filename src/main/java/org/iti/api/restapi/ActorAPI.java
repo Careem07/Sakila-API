@@ -11,13 +11,13 @@ import org.iti.services.ActorServices;
 import java.util.List;
 
 @Path("actors")
-public class ActorAPI {
+public class ActorAPI  {
 
     ActorServices services = new ActorServices();
 
 
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<ActorDto> getActors(){
         return services.getActors();
     }
@@ -60,21 +60,13 @@ public class ActorAPI {
 
     @PUT
     @Path("{id}")
-    public Response updateActor(@PathParam("id") int id ,
-                                @QueryParam("fname") String fName,
-                                @QueryParam("lname") String lName) {
-        ActorDto actorDto = services.getActorById(id);
-
-        if(actorDto == null)  return Response.status(Response.Status.NOT_FOUND).build();
-
-        actorDto.setFirstName(fName);
-        actorDto.setLastName(lName);
-
-        if(services.updateActor(actorDto) == null){
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateActor(@PathParam("id") int id,ActorDto actorDto) {
+        ActorDto dto = services.updateActor(id,actorDto);
+        if(dto == null){
             return Response.status(Response.Status.NOT_MODIFIED).build();
         }
-        return Response.ok(actorDto).build();
+        return Response.ok(dto).build();
     }
-
 
 }

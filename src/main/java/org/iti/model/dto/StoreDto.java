@@ -1,6 +1,8 @@
 package org.iti.model.dto;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.validation.constraints.NotNull;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -8,20 +10,27 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * A DTO for the {@link org.iti.entities.Store} entity
+ * A DTO for the {@link org.iti.model.entities.Store} entity
  */
+@XmlRootElement
 public class StoreDto implements Serializable {
-    private  Short id;
+    private Short id;
     @NotNull
-    private  AddressDto address;
+    private StaffDto managerStaff;
     @NotNull
-    private  Instant lastUpdate;
-    private  Set<InventoryDto> inventories;
-    private  Set<StaffDto> staff;
-    private  Set<CustomerDto> customers;
+    private AddressDto address;
+    @NotNull
+    private Instant lastUpdate;
+    @JsonbTransient
+    private Set<InventoryDto> inventories;
+    @JsonbTransient
+    private Set<StaffDto> staff;
+    @JsonbTransient
+    private Set<CustomerDto> customers;
 
-    public StoreDto(Short id, AddressDto address, Instant lastUpdate, Set<InventoryDto> inventories, Set<StaffDto> staff, Set<CustomerDto> customers) {
+    public StoreDto(Short id, StaffDto managerStaff, AddressDto address, Instant lastUpdate, Set<InventoryDto> inventories, Set<StaffDto> staff, Set<CustomerDto> customers) {
         this.id = id;
+        this.managerStaff = managerStaff;
         this.address = address;
         this.lastUpdate = lastUpdate;
         this.inventories = inventories;
@@ -36,52 +45,55 @@ public class StoreDto implements Serializable {
         return id;
     }
 
-    public AddressDto getAddress() {
-        return address;
+    public void setId(Short id) {
+        this.id = id;
     }
+
+    public StaffDto getManagerStaff() {
+        return managerStaff;
+    }
+
+    public void setManagerStaff(StaffDto managerStaff) {
+        this.managerStaff = managerStaff;
+    }
+//
+//    public AddressDto getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(AddressDto address) {
+//        this.address = address;
+//    }
 
     public Instant getLastUpdate() {
         return lastUpdate;
     }
 
-    public Set<InventoryDto> getInventories() {
-        return inventories;
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 
-    public Set<StaffDto> getStaff() {
-        return staff;
-    }
+//    public Set<InventoryDto> getInventories() {
+//        return inventories;
+//    }
+//
+//    public void setInventories(Set<InventoryDto> inventories) {
+//        this.inventories = inventories;
+//    }
 
-    public Set<CustomerDto> getCustomers() {
-        return customers;
-    }
+//    public Set<StaffDto> getStaff() {
+//        return staff;
+//    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        StoreDto entity = (StoreDto) o;
-        return Objects.equals(this.id, entity.id) &&
-                Objects.equals(this.address, entity.address) &&
-                Objects.equals(this.lastUpdate, entity.lastUpdate) &&
-                Objects.equals(this.inventories, entity.inventories) &&
-                Objects.equals(this.staff, entity.staff) &&
-                Objects.equals(this.customers, entity.customers);
-    }
+//    public void setStaff(Set<StaffDto> staff) {
+//        this.staff = staff;
+//    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, address, lastUpdate, inventories, staff, customers);
-    }
+//    public Set<CustomerDto> getCustomers() {
+//        return customers;
+//    }
 
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "address = " + address + ", " +
-                "lastUpdate = " + lastUpdate + ", " +
-                "inventories = " + inventories + ", " +
-                "staff = " + staff + ", " +
-                "customers = " + customers + ")";
-    }
+//    public void setCustomers(Set<CustomerDto> customers) {
+//        this.customers = customers;
+//    }
 }

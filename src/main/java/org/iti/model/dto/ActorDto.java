@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * A DTO for the {@link org.iti.model.entities.Actor} entity
  */
-
+@XmlRootElement
 public class ActorDto implements Serializable {
     private  Integer id;
     @Size(max = 45)

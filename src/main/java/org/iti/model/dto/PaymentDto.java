@@ -1,6 +1,7 @@
 package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,8 +9,9 @@ import java.time.Instant;
 import java.util.Objects;
 
 /**
- * A DTO for the {@link org.iti.entities.Payment} entity
+ * A DTO for the {@link org.iti.model.entities.Payment} entity
  */
+@XmlRootElement
 public class PaymentDto implements Serializable {
     private  Integer id;
     @NotNull

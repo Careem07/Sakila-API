@@ -1,6 +1,7 @@
 package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import org.iti.model.entities.Actor;
 
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.util.Objects;
 /**
  * A DTO for the {@link org.iti.model.entities.FilmActor} entity
  */
+@XmlRootElement
 public class FilmActorDto implements Serializable {
     private  int id;
 

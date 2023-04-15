@@ -2,13 +2,15 @@ package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * A DTO for the {@link org.iti.entities.FilmText} entity
+ * A DTO for the {@link org.iti.model.entities.FilmText} entity
  */
+@XmlRootElement
 public class FilmTextDto implements Serializable {
     private  Short id;
     @Size(max = 255)

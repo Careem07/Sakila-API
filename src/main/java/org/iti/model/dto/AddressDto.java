@@ -2,14 +2,16 @@ package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 /**
- * A DTO for the {@link org.iti.entities.Address} entity
+ * A DTO for the {@link org.iti.model.entities.Address} entity
  */
+@XmlRootElement
 public class AddressDto implements Serializable {
     private  Integer id;
     @Size(max = 50)
@@ -27,9 +29,9 @@ public class AddressDto implements Serializable {
     private  String phone;
     @NotNull
     private  Instant lastUpdate;
-    private  Object location;
 
-    public AddressDto(Integer id, String address, String address2, String district, String postalCode, String phone, Instant lastUpdate, Object location) {
+
+    public AddressDto(Integer id, String address, String address2, String district, String postalCode, String phone, Instant lastUpdate) {
         this.id = id;
         this.address = address;
         this.address2 = address2;
@@ -37,10 +39,38 @@ public class AddressDto implements Serializable {
         this.postalCode = postalCode;
         this.phone = phone;
         this.lastUpdate = lastUpdate;
-        this.location = location;
+
     }
 
     public AddressDto() {
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 
     public Integer getId() {
@@ -71,9 +101,7 @@ public class AddressDto implements Serializable {
         return lastUpdate;
     }
 
-    public Object getLocation() {
-        return location;
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -86,13 +114,12 @@ public class AddressDto implements Serializable {
                 Objects.equals(this.district, entity.district) &&
                 Objects.equals(this.postalCode, entity.postalCode) &&
                 Objects.equals(this.phone, entity.phone) &&
-                Objects.equals(this.lastUpdate, entity.lastUpdate) &&
-                Objects.equals(this.location, entity.location);
+                Objects.equals(this.lastUpdate, entity.lastUpdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, address, address2, district, postalCode, phone, lastUpdate, location);
+        return Objects.hash(id, address, address2, district, postalCode, phone, lastUpdate);
     }
 
     @Override
@@ -104,7 +131,5 @@ public class AddressDto implements Serializable {
                 "district = " + district + ", " +
                 "postalCode = " + postalCode + ", " +
                 "phone = " + phone + ", " +
-                "lastUpdate = " + lastUpdate + ", " +
-                "location = " + location + ")";
-    }
+                "lastUpdate = " + lastUpdate ;}
 }

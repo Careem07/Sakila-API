@@ -1,6 +1,7 @@
 package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -8,8 +9,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * A DTO for the {@link org.iti.entities.Inventory} entity
+ * A DTO for the {@link org.iti.model.entities.Inventory} entity
  */
+@XmlRootElement
 public class InventoryDto implements Serializable {
     private  Integer id;
     @NotNull
@@ -71,11 +73,11 @@ public class InventoryDto implements Serializable {
                 "rentals = " + rentals + ")";
     }
 
-    public StoreDto getStore() {
-        return store;
-    }
-
-    public void setStore(StoreDto store) {
-        this.store = store;
-    }
+//    public StoreDto getStore() {
+//        return store;
+//    }
+//
+//    public void setStore(StoreDto store) {
+//        this.store = store;
+//    }
 }

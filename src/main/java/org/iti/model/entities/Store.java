@@ -30,6 +30,7 @@ public class Store  implements Serializable {
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "store")
+
     private Set<Inventory> inventories = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "storeid")
@@ -93,5 +94,4 @@ public class Store  implements Serializable {
     public void setCustomers(Set<Customer> customers) {
         this.customers = customers;
     }
-
 }

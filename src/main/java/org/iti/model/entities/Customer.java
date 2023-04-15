@@ -53,7 +53,7 @@ public class Customer  implements Serializable {
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "customer")
-    private Set<Payment> payments = new LinkedHashSet<>();
+    private transient Set<Payment> payments = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "customer")
     private Set<Rental> rentals = new LinkedHashSet<>();
