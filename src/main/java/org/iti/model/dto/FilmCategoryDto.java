@@ -13,7 +13,7 @@ import java.util.Objects;
 @XmlRootElement
 public class FilmCategoryDto implements Serializable {
     private Integer id;
-    private transient FilmDto film;
+    private  FilmDto film;
     private CategoryDto categoryDto;
     @NotNull
     private Instant lastUpdate;

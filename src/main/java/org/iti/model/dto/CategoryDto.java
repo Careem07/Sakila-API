@@ -72,4 +72,20 @@ public class CategoryDto implements Serializable {
                 "lastUpdate = " + lastUpdate + ", " +
                 "filmCategories = " + filmCategories + ")";
     }
+
+    public void setId(Short id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
+        this.filmCategories = filmCategories;
+    }
 }

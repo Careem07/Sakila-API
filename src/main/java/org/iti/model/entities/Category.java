@@ -13,6 +13,7 @@ import java.util.Set;
 @Table(name = "category")
 public class Category  implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;
 
