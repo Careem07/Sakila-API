@@ -52,13 +52,13 @@ public class CustomerDto implements Serializable {
     }
 
 
-//    public StoreDto getStoreDto() {
-//        return storeDto;
-//    }
-//
-//    public void setStoreDto(StoreDto storeDto) {
-//        this.storeDto = storeDto;
-//    }
+    public StoreDto getStoreDto() {
+        return storeDto;
+    }
+
+    public void setStoreDto(StoreDto storeDto) {
+        this.storeDto = storeDto;
+    }
 
     public AddressDto getAddressDto() {
         return addressDto;

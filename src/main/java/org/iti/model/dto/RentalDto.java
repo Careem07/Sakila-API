@@ -83,13 +83,13 @@ public class RentalDto implements Serializable {
                 '}';
     }
 
-    public InventoryDto getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(InventoryDto inventory) {
-        this.inventory = inventory;
-    }
+//    public InventoryDto getInventory() {
+//        return inventory;
+//    }
+//
+//    public void setInventory(InventoryDto inventory) {
+//        this.inventory = inventory;
+//    }
 
     public CustomerDto getCustomer() {
         return customer;

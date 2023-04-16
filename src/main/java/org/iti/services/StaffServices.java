@@ -12,7 +12,9 @@ public class StaffServices {
     RepositoryImpl<Staff> repository = new RepositoryImpl<>(Staff.class);
 
     public StaffDto createStaff(StaffDto staffDto){
+
         Staff staff = new ModelMapper().map(staffDto,Staff.class);
+        System.out.println("staff.getStoreid() = " + staff.getStoreid());
         repository.create(staff);
         return staffDto;
     }

@@ -90,9 +90,9 @@ public class FilmDto implements Serializable {
         return lastUpdate;
     }
 
-    public Set<InventoryDto> getInventories() {
-        return inventories;
-    }
+//    public Set<InventoryDto> getInventories() {
+//        return inventories;
+//    }
 
     public Set<FilmActorDto> getFilmActors() {
         return filmActors;
@@ -154,9 +154,9 @@ public class FilmDto implements Serializable {
         this.filmCategories = filmCategories;
     }
 
-    public void setInventories(Set<InventoryDto> inventories) {
-        this.inventories = inventories;
-    }
+//    public void setInventories(Set<InventoryDto> inventories) {
+//        this.inventories = inventories;
+//    }
 
     @Override
     public boolean equals(Object o) {

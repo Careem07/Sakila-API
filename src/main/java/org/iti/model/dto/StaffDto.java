@@ -53,6 +53,11 @@ public class StaffDto implements Serializable {
     public StaffDto() {
     }
 
+    public StaffDto(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Short getId() {
         return id;
     }

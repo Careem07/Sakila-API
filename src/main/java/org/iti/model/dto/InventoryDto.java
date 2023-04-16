@@ -2,6 +2,7 @@ package org.iti.model.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -73,10 +74,12 @@ public class InventoryDto implements Serializable {
                 "rentals = " + rentals + ")";
     }
 
-//    public StoreDto getStore() {
-//        return store;
-//    }
-//
+    @IgnoreForBinding
+    public StoreDto getStore() {
+        return store;
+    }
+
+//    @IgnoreForBinding
 //    public void setStore(StoreDto store) {
 //        this.store = store;
 //    }

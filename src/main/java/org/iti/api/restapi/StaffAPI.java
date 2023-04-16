@@ -1,11 +1,9 @@
 package org.iti.api.restapi;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.iti.model.dto.StaffDto;
 import org.iti.model.dto.StaffDto;
 import org.iti.services.StaffServices;
 
@@ -27,8 +25,15 @@ public class StaffAPI {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getStaff(@PathParam("id") int id){
         StaffDto storeDto = services.getStaffById(id);
-        System.out.println("storeDto.getEmail() = " + storeDto.getEmail());
         if(storeDto == null) return Response.status(Response.Status.NOT_FOUND).build();
         return Response.ok(storeDto).build();
+    }
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addStaff(StaffDto staffDto){
+        StaffDto dto = services.createStaff(staffDto);
+        if(dto == null )   return Response.status(Response.Status.NOT_FOUND).build();
+        return Response.ok(dto).build();
+
     }
 }

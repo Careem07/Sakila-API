@@ -25,9 +25,8 @@ public class CustomerAPI {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCustomers(){
-        List<CustomerDto> films = services.getAllCustomers();
-        return Response.ok(films).build();
-
+        List<CustomerDto> customers = services.getAllCustomers();
+        return Response.ok(customers).build();
     }
 
     @POST

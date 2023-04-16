@@ -42,6 +42,10 @@ public class AddressDto implements Serializable {
 
     }
 
+    public AddressDto(String address) {
+        this.address = address;
+    }
+
     public AddressDto() {
     }
 
