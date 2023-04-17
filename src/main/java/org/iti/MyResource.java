@@ -1,16 +1,11 @@
 package org.iti;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import org.iti.entities.Actor;
+import org.iti.model.entities.Actor;
 import org.iti.repositories.RepositoryImpl;
-
-import java.time.Instant;
 
 /**
  * Root resource (exposed at "myresource" path)
