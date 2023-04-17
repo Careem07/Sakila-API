@@ -48,6 +48,22 @@ public class CountryDto implements Serializable {
         return cities;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public void setCities(Set<CityDto> cities) {
+        this.cities = cities;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

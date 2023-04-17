@@ -30,8 +30,8 @@ public class CategoryServices {
     }
 
     public List<CategoryDto> getCategories(){
-        List<Category> actors = repo.findAll();
-        return new ModelMapper().map(actors,new TypeToken<List<CategoryDto>>(){}.getType());
+        List<Category> categories = repo.findAll();
+        return new ModelMapper().map(categories,new TypeToken<List<CategoryDto>>(){}.getType());
     }
 
     public boolean removeCategory(int id){
