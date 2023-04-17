@@ -32,9 +32,9 @@ public class CategoryDto implements Serializable {
     public CategoryDto() {
     }
 
-    public Short getId() {
-        return id;
-    }
+//    public Short getId() {
+//        return id;
+//    }
 
     public String getName() {
         return name;
@@ -44,9 +44,9 @@ public class CategoryDto implements Serializable {
         return lastUpdate;
     }
 
-    public Set<FilmCategoryDto> getFilmCategories() {
-        return filmCategories;
-    }
+//    public Set<FilmCategoryDto> getFilmCategories() {
+//        return filmCategories;
+//    }
 
     @Override
     public boolean equals(Object o) {
@@ -85,7 +85,7 @@ public class CategoryDto implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
-        this.filmCategories = filmCategories;
-    }
+//    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
+//        this.filmCategories = filmCategories;
+//    }
 }

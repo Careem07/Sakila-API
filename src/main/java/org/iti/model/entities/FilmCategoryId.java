@@ -14,7 +14,16 @@ public class FilmCategoryId implements Serializable {
     private Integer filmId;
 
     @Column(name = "category_id", columnDefinition = "TINYINT UNSIGNED not null")
-    private Short categoryId;
+    private Integer categoryId;
+
+    public FilmCategoryId(Integer filmId, Integer categoryId) {
+        this.filmId = filmId;
+        this.categoryId = categoryId;
+    }
+
+    public FilmCategoryId() {
+
+    }
 
     public Integer getFilmId() {
         return filmId;
@@ -24,11 +33,11 @@ public class FilmCategoryId implements Serializable {
         this.filmId = filmId;
     }
 
-    public Short getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Short categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 

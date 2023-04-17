@@ -1,10 +1,11 @@
 package org.iti;
 
 import org.iti.services.FilmActorServices;
+import org.iti.services.FilmCategoryServices;
 
 public class App {
     public static void main(String[] args) {
-        FilmActorServices services = new FilmActorServices();
-        System.out.println("services.getFilmActorById(1) = " + services.getFilmActorByActor_Film(1,1));
+        FilmCategoryServices services = new FilmCategoryServices();
+        System.out.println("services.getFilmActorById(1) = " + services.getFilmCategoryByCategory_Film(1,6).getCategory());
     }
 }

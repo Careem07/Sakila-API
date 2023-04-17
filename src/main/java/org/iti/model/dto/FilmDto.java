@@ -46,9 +46,9 @@ public class FilmDto implements Serializable {
     public FilmDto() {
     }
 
-    public Integer getId() {
-        return id;
-    }
+//    public Integer getId() {
+//        return id;
+//    }
 
     public String getTitle() {
         return title;

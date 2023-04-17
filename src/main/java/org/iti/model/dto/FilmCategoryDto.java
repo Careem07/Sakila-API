@@ -12,7 +12,8 @@ import java.util.Objects;
  */
 @XmlRootElement
 public class FilmCategoryDto implements Serializable {
-    private Integer id;
+    private Integer filmId;
+    private Integer categoryId;
     private  FilmDto film;
     private CategoryDto categoryDto;
     @NotNull
@@ -27,16 +28,28 @@ public class FilmCategoryDto implements Serializable {
     public FilmCategoryDto() {
     }
 
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
     public Instant getLastUpdate() {
         return lastUpdate;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getFilmId() {
+        return filmId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setFilmId(Integer filmId) {
+        this.filmId = filmId;
     }
 
     public FilmDto getFilm() {
@@ -47,11 +60,11 @@ public class FilmCategoryDto implements Serializable {
         this.film = film;
     }
 
-    public CategoryDto getCategoryDto() {
+    public CategoryDto getCategory() {
         return categoryDto;
     }
 
-    public void setCategoryDto(CategoryDto categoryDto) {
+    public void setCategory(CategoryDto categoryDto) {
         this.categoryDto = categoryDto;
     }
 
