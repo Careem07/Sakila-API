@@ -13,8 +13,9 @@ import java.util.Objects;
  */
 @XmlRootElement
 public class FilmActorDto implements Serializable {
-    private  int id;
+    private int actorId;
 
+    private int filmId;
 
     private  FilmDto film;
 
@@ -22,56 +23,66 @@ public class FilmActorDto implements Serializable {
     @NotNull
     private  Instant lastUpdate;
 
-    public FilmActorDto(int id, FilmDto film, ActorDto actor, Instant lastUpdate) {
-        this.id = id;
+    public FilmActorDto() {
+    }
+
+
+    public FilmActorDto(int actorId, int filmId, FilmDto film, ActorDto actor, Instant lastUpdate) {
+        this.actorId = actorId;
+        this.filmId = filmId;
         this.film = film;
         this.actor = actor;
         this.lastUpdate = lastUpdate;
     }
 
-    public FilmActorDto() {
+    public int getActorId() {
+        return actorId;
     }
 
-    public int getId() {
-        return id;
+    public void setActorId(int actorId) {
+        this.actorId = actorId;
     }
 
-//    public FilmDto getFilm() {
-//        return film;
-//    }
+    public int getFilmId() {
+        return filmId;
+    }
+
+    public void setFilmId(int filmId) {
+        this.filmId = filmId;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
 
     public Instant getLastUpdate() {
         return lastUpdate;
     }
 
-//    public ActorDto getActor() {
-//        return actor;
-//    }
-//
-//    public void setActor(ActorDto actor) {
-//        this.actor = actor;
-//    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FilmActorDto entity = (FilmActorDto) o;
-        return Objects.equals(this.id, entity.id) &&
-                //Objects.equals(this.film, entity.film) &&
-                Objects.equals(this.lastUpdate, entity.lastUpdate);
+    public ActorDto getActor() {
+        return actor;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, lastUpdate);
+    public void setActor(ActorDto actor) {
+        this.actor = actor;
+    }
+
+    public FilmDto getFilm() {
+        return film;
+    }
+
+    public void setFilm(FilmDto film) {
+        this.film = film;
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "film = " +  " " +
-                "lastUpdate = " + lastUpdate + ")";
+        return "FilmActorDto{" +
+                "actorId=" + actorId +
+                ", filmId=" + filmId +
+                ", film=" + film +
+                ", actor=" + actor +
+                ", lastUpdate=" + lastUpdate +
+                '}';
     }
 }

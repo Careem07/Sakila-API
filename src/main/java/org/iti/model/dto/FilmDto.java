@@ -94,9 +94,9 @@ public class FilmDto implements Serializable {
 //        return inventories;
 //    }
 
-    public Set<FilmActorDto> getFilmActors() {
-        return filmActors;
-    }
+//    public Set<FilmActorDto> getFilmActors() {
+//        return filmActors;
+//    }
 
     public Set<FilmCategoryDto> getFilmCategories() {
         return filmCategories;
@@ -146,9 +146,9 @@ public class FilmDto implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public void setFilmActors(Set<FilmActorDto> filmActors) {
-        this.filmActors = filmActors;
-    }
+//    public void setFilmActors(Set<FilmActorDto> filmActors) {
+//        this.filmActors = filmActors;
+//    }
 
     public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
         this.filmCategories = filmCategories;

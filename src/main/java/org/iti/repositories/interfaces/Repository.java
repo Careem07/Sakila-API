@@ -5,6 +5,8 @@ public interface Repository<T> {
 
     T findById(int id);
 
+    <K> T find(K k);
+
     List<T> findAll();
 
     T update (T t);

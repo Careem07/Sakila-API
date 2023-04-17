@@ -38,6 +38,11 @@ public class RepositoryImpl<T> implements Repository<T> {
     }
 
     @Override
+    public <K> T find(K k) {
+        return em.find(type,k);
+    }
+
+    @Override
     public List<T> findAll() {
         return em.createQuery("FROM "+type.getName()+ " ").getResultList();
     }
