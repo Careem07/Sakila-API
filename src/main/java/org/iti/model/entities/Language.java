@@ -13,6 +13,7 @@ import java.util.Set;
 @Table(name = "language")
 public class Language  implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "language_id", columnDefinition = "TINYINT UNSIGNED not null")
     private Short id;
 
@@ -52,12 +53,12 @@ public class Language  implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public Set<Film> getFilms() {
-        return films;
-    }
-
-    public void setFilms(Set<Film> films) {
-        this.films = films;
-    }
+//    public Set<Film> getFilms() {
+//        return films;
+//    }
+//
+//    public void setFilms(Set<Film> films) {
+//        this.films = films;
+//    }
 
 }

@@ -74,10 +74,6 @@ public class StaffDto implements Serializable {
         return address;
     }
 
-    public byte[] getPicture() {
-        return picture;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -118,9 +114,6 @@ public class StaffDto implements Serializable {
         this.address = address;
     }
 
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
-    }
 
     public void setEmail(String email) {
         this.email = email;

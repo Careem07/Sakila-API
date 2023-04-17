@@ -44,8 +44,16 @@ public class LanguageDto implements Serializable {
         return lastUpdate;
     }
 
-    public Set<FilmDto> getFilms() {
-        return films;
+    public void setId(Short id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 
     @Override

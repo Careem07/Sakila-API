@@ -24,8 +24,8 @@ public class FilmActorDto implements Serializable {
 
     public FilmActorDto(int id, FilmDto film, ActorDto actor, Instant lastUpdate) {
         this.id = id;
-//        this.film = film;
-//        this.actor = actor;
+        this.film = film;
+        this.actor = actor;
         this.lastUpdate = lastUpdate;
     }
 

@@ -82,6 +82,18 @@ public class PaymentDto implements Serializable {
                 '}';
     }
 
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public void setPaymentDate(Instant paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
     public StaffDto getStaff() {
         return staff;
     }
@@ -98,11 +110,11 @@ public class PaymentDto implements Serializable {
         this.customer = customer;
     }
 
-    public RentalDto getRental() {
-        return rental;
-    }
-
-    public void setRental(RentalDto rental) {
-        this.rental = rental;
-    }
+//    public RentalDto getRental() {
+//        return rental;
+//    }
+//
+//    public void setRental(RentalDto rental) {
+//        this.rental = rental;
+//    }
 }
