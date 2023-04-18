@@ -29,7 +29,6 @@ public class Inventory  implements Serializable {
     @NotNull
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
-
     @OneToMany(mappedBy = "inventory")
     private Set<Rental> rentals = new LinkedHashSet<>();
 

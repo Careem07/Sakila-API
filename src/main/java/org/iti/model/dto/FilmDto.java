@@ -35,20 +35,20 @@ public class FilmDto implements Serializable {
     @NotNull
     private  Instant lastUpdate;
 
-    private transient Set<FilmActorDto> filmActors;
+    private  Set<FilmActorDto> filmActors;
 
-    private transient Set<FilmCategoryDto> filmCategories;
+    private  Set<FilmCategoryDto> filmCategories;
 
-    private transient Set<InventoryDto> inventories;
+    private  Set<InventoryDto> inventories;
 
 
 
     public FilmDto() {
     }
 
-//    public Integer getId() {
-//        return id;
-//    }
+    public Integer getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
@@ -98,9 +98,9 @@ public class FilmDto implements Serializable {
 //        return filmActors;
 //    }
 
-    public Set<FilmCategoryDto> getFilmCategories() {
-        return filmCategories;
-    }
+//    public Set<FilmCategoryDto> getFilmCategories() {
+//        return filmCategories;
+//    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -150,9 +150,9 @@ public class FilmDto implements Serializable {
 //        this.filmActors = filmActors;
 //    }
 
-    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
-        this.filmCategories = filmCategories;
-    }
+//    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
+//        this.filmCategories = filmCategories;
+//    }
 
 //    public void setInventories(Set<InventoryDto> inventories) {
 //        this.inventories = inventories;

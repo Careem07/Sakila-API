@@ -74,13 +74,6 @@ public class StoreDto implements Serializable {
     }
 
 
-    public void setInventories(Set<InventoryDto> inventories) {
-        this.inventories = inventories;
-    }
-//    @IgnoreForBinding
-//    public Set<InventoryDto> getInventories() {
-//        return inventories;
-//    }
 
     public Set<StaffDto> getStaff() {
         return staff;
