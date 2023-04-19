@@ -14,7 +14,6 @@ public class CityServices {
     RepositoryImpl<City> repository = new RepositoryImpl<>(City.class);
 
     public CityDto createCity(CityDto cityDto){
-        System.out.println("cityDto.getCountry() = " + cityDto.getCountry());
         City city = new ModelMapper().map(cityDto,City.class);
         if(repository.create(city) == null){
             return null;

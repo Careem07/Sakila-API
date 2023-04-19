@@ -1,6 +1,5 @@
 package org.iti.model.dto;
 
-import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jakarta.xml.bind.annotation.XmlRootElement;
@@ -29,8 +28,8 @@ public class CustomerDto implements Serializable {
     @NotNull
     private  Instant createDate;
     private  Instant lastUpdate;
-    private AddressDto addressDto;
-    private StoreDto storeDto;
+    private AddressDto address;
+    private StoreDto store;
 
 
 
@@ -52,20 +51,20 @@ public class CustomerDto implements Serializable {
     }
 
 
-    public StoreDto getStoreDto() {
-        return storeDto;
+    public StoreDto getStore() {
+        return store;
     }
 
-    public void setStoreDto(StoreDto storeDto) {
-        this.storeDto = storeDto;
+    public void setStore(StoreDto store) {
+        this.store = store;
     }
 
-    public AddressDto getAddressDto() {
-        return addressDto;
+    public AddressDto getAddress() {
+        return address;
     }
 
-    public void setAddressDto(AddressDto addressDto) {
-        this.addressDto = addressDto;
+    public void setAddress(AddressDto address) {
+        this.address = address;
     }
 
     public void setId(Integer id) {

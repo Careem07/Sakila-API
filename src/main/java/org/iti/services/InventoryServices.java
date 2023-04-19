@@ -12,13 +12,13 @@ public class InventoryServices {
 
     RepositoryImpl<Inventory> repository = new RepositoryImpl<>(Inventory.class);
 
-    public InventoryDto createInventory(InventoryDto InventoryDto){
-
-        Inventory inventory = new ModelMapper().map(InventoryDto,Inventory.class);
+    public InventoryDto createInventory(InventoryDto inventoryDto){
+        System.out.println("inventoryDto = " + inventoryDto);
+        Inventory inventory = new ModelMapper().map(inventoryDto,Inventory.class);
         if(repository.create(inventory) == null){
             return null;
         }
-        return InventoryDto;
+        return inventoryDto;
     }
 
     public InventoryDto getInventoryById(int id){
