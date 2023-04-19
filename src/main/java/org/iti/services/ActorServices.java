@@ -46,7 +46,7 @@ public class ActorServices {
         Actor actor = repo.findById(id);
         actor.setFirstName(actorDto.getFirstName());
         actor.setLastName(actorDto.getLastName());
-        actor.setLastUpdate(actorDto.getLastUpdate());
+        actor.setLastUpdate(Instant.now());
         Actor newActor = repo.update(actor);
         return new ModelMapper().map(newActor,ActorDto.class);
     }

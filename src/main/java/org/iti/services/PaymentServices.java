@@ -6,13 +6,14 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class PaymentServices {
     RepositoryImpl<Payment> repository = new RepositoryImpl<>(Payment.class);
 
     public PaymentDto createPayment(PaymentDto paymentDto){
-
+        paymentDto.setLastUpdate(Instant.now());
         Payment payment = new ModelMapper().map(paymentDto,Payment.class);
         if(repository.create(payment) == null){
             return null;

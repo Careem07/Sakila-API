@@ -6,6 +6,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class InventoryServices {
@@ -14,6 +15,7 @@ public class InventoryServices {
 
     public InventoryDto createInventory(InventoryDto inventoryDto){
         System.out.println("inventoryDto = " + inventoryDto);
+        inventoryDto.setLastUpdate(Instant.now());
         Inventory inventory = new ModelMapper().map(inventoryDto,Inventory.class);
         if(repository.create(inventory) == null){
             return null;

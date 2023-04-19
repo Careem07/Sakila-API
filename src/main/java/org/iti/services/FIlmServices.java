@@ -12,6 +12,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class FIlmServices {
@@ -19,7 +20,7 @@ public class FIlmServices {
 
 
     public FilmDto createFilm(FilmDto filmDto) {
-
+        filmDto.setLastUpdate(Instant.now());
         Film film = new ModelMapper().map(filmDto, Film.class);
         if (repo.create(film) == null) {
             return null;

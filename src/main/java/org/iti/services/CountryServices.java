@@ -6,13 +6,14 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class CountryServices {
     RepositoryImpl<Country> repository = new RepositoryImpl<>(Country.class);
 
     public CountryDto createCountry(CountryDto countryDto){
-
+        countryDto.setLastUpdate(Instant.now());
         Country country = new ModelMapper().map(countryDto,Country.class);
         if(repository.create(country) == null){
             return null;

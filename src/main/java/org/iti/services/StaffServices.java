@@ -6,13 +6,14 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class StaffServices {
     RepositoryImpl<Staff> repository = new RepositoryImpl<>(Staff.class);
 
     public StaffDto createStaff(StaffDto staffDto){
-
+        staffDto.setLastUpdate(Instant.now());
         Staff staff = new ModelMapper().map(staffDto,Staff.class);
         System.out.println("staff.getStoreid() = " + staff.getStoreid());
         repository.create(staff);

@@ -6,6 +6,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class RentalServices {
@@ -13,7 +14,7 @@ public class RentalServices {
     RepositoryImpl<Rental> repository = new RepositoryImpl<>(Rental.class);
 
     public RentalDto createRental(RentalDto RentalDto){
-
+        RentalDto.setLastUpdate(Instant.now());
         Rental Rental = new ModelMapper().map(RentalDto,Rental.class);
         if(repository.create(Rental) == null){
             return null;

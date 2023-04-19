@@ -7,6 +7,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class FilmCategoryServices {
@@ -14,6 +15,7 @@ public class FilmCategoryServices {
     RepositoryImpl<FilmCategory> repository = new RepositoryImpl<>(FilmCategory.class);
 
     public FilmCategoryDto createFilmCategory(FilmCategoryDto filmCategoryDto){
+        filmCategoryDto.setLastUpdate(Instant.now());
         FilmCategory filmCategory = new ModelMapper().map(filmCategoryDto,FilmCategory.class);
         if(repository.create(filmCategory) == null){
             return null;

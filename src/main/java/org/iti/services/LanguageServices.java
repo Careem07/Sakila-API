@@ -6,6 +6,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class LanguageServices {
@@ -13,6 +14,7 @@ public class LanguageServices {
     RepositoryImpl<Language> repository = new RepositoryImpl<>(Language.class);
 
     public LanguageDto createLanguage(LanguageDto languageDto){
+        languageDto.setLastUpdate(Instant.now());
         Language language = new ModelMapper().map(languageDto,Language.class);
         if(repository.create(language) == null){
             return null;
