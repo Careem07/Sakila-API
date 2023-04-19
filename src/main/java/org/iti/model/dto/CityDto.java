@@ -13,6 +13,7 @@ import java.util.Set;
 
 /**
  * A DTO for the {@link org.iti.model.entities.City} entity
+ * To insert in this DTO unComment Country Setters/Getters
  */
 @XmlRootElement
 public class CityDto implements Serializable {
@@ -53,13 +54,13 @@ public class CityDto implements Serializable {
         this.city = city;
     }
 
-    public CountryDto getCountry() {
-        return country;
-    }
-
-    public void setCountry(CountryDto country) {
-        this.country = country;
-    }
+//    public CountryDto getCountry() {
+//        return country;
+//    }
+//
+//    public void setCountry(CountryDto country) {
+//        this.country = country;
+//    }
 
     public Instant getLastUpdate() {
         return lastUpdate;
@@ -77,14 +78,6 @@ public class CityDto implements Serializable {
         this.addresses = addresses;
     }
 
-    @Override
-    public String toString() {
-        return "CityDto{" +
-                "id=" + id +
-                ", city='" + city + '\'' +
-                ", country=" + country +
-                ", lastUpdate=" + lastUpdate +
-                ", addresses=" + addresses +
-                '}';
-    }
+
+
 }

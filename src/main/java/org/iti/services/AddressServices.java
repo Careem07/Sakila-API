@@ -19,13 +19,13 @@ public class AddressServices {
         return addressDto;
     }
 
-    public AddressDto createAddress(AddressDto AddressDto){
-        AddressDto.setLastUpdate(Instant.now());
-        Address Address = new ModelMapper().map(AddressDto,Address.class);
+    public AddressDto createAddress(AddressDto addressDto){
+        addressDto.setLastUpdate(Instant.now());
+        Address Address = new ModelMapper().map(addressDto,Address.class);
         if(repository.create(Address) == null){
             return null;
         }
-        return AddressDto;
+        return addressDto;
     }
 
     public List<AddressDto> getAddresses(){

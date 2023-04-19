@@ -2,7 +2,14 @@
 <endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
     
     <endpoint name="ActorSOAP"
-              implementation="org.iti.api.soap.ActorWebServices" url-pattern="/ws/actor"/>
+              implementation="org.iti.api.soap.ActorWs" url-pattern="/ws/actor"/>
     
-    
+    <endpoint name="AddressSOAP"
+              implementation="org.iti.api.soap.AddressWs" url-pattern="/ws/address"/>
+
+    <endpoint name="CategorySOAP"
+              implementation="org.iti.api.soap.CategoryWs" url-pattern="/ws/category"/>
+
+    <endpoint name="CitySOAP"
+              implementation="org.iti.api.soap.CityWs" url-pattern="/ws/city"/>
 </endpoints>

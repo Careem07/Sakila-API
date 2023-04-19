@@ -2,15 +2,13 @@ package org.iti.api.soap;
 
 import jakarta.jws.WebParam;
 import jakarta.jws.WebService;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.core.Response;
 import org.iti.model.dto.ActorDto;
 import org.iti.services.ActorServices;
 
 import java.util.List;
 
 @WebService
-public class ActorWebServices {
+public class ActorWs {
 
     ActorServices services = new ActorServices();
 

@@ -43,7 +43,7 @@ public class CategoryServices {
     public CategoryDto updateCategory(int id , CategoryDto categoryDto){
         Category category = repo.findById(id);
         category.setName(categoryDto.getName());
-        category.setLastUpdate(categoryDto.getLastUpdate());
+        category.setLastUpdate(Instant.now());
         Category newCategory = repo.update(category);
         return new ModelMapper().map(newCategory , CategoryDto.class);
     }
