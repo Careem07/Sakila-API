@@ -6,6 +6,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class AddressServices {
@@ -19,6 +20,7 @@ public class AddressServices {
     }
 
     public AddressDto createAddress(AddressDto AddressDto){
+        AddressDto.setLastUpdate(Instant.now());
         Address Address = new ModelMapper().map(AddressDto,Address.class);
         if(repository.create(Address) == null){
             return null;
