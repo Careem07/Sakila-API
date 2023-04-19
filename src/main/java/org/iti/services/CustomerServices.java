@@ -27,7 +27,7 @@ public class CustomerServices {
     }
 
     public CustomerDto createCustomer(CustomerDto customerDto){
-        customerDto.setLastUpdate(Instant.now());
+        customerDto.setCreateDate(Instant.now());
         Customer customer = new ModelMapper().map(customerDto , Customer.class);
         repository.create(customer);
         return customerDto;

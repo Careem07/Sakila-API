@@ -12,4 +12,10 @@
 
     <endpoint name="CitySOAP"
               implementation="org.iti.api.soap.CityWs" url-pattern="/ws/city"/>
+
+    <endpoint name="CountrySOAP"
+              implementation="org.iti.api.soap.CountryWs" url-pattern="/ws/country"/>
+
+    <endpoint name="CustomerSOAP"
+              implementation="org.iti.api.soap.CustomerWs" url-pattern="/ws/customer"/>
 </endpoints>

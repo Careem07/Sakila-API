@@ -35,7 +35,6 @@ public class CustomerDto implements Serializable {
 
     public CustomerDto(Integer id, StoreDto store, String firstName, String lastName, String email, AddressDto address, Boolean active, Instant createDate, Instant lastUpdate, Set<PaymentDto> payments, Set<RentalDto> rentals) {
         this.id = id;
-
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

@@ -40,7 +40,7 @@ public class CountryServices {
     public CountryDto updateCountry(int id , CountryDto countryDto){
         Country country1 = repository.findById(id);
         country1.setCountry(country1.getCountry());
-        country1.setLastUpdate(countryDto.getLastUpdate());
+        country1.setLastUpdate(Instant.now());
         Country newCountry = repository.update(country1);
         return new ModelMapper().map(newCountry , CountryDto.class);
     }
