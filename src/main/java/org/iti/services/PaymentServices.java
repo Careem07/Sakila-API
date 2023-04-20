@@ -13,7 +13,7 @@ public class PaymentServices {
     RepositoryImpl<Payment> repository = new RepositoryImpl<>(Payment.class);
 
     public PaymentDto createPayment(PaymentDto paymentDto){
-        paymentDto.setLastUpdate(Instant.now());
+        paymentDto.setPaymentDate(Instant.now());
         Payment payment = new ModelMapper().map(paymentDto,Payment.class);
         if(repository.create(payment) == null){
             return null;
@@ -39,7 +39,7 @@ public class PaymentServices {
 
     public PaymentDto updatePayment(int id , PaymentDto paymentDto){
         Payment payment = repository.findById(id);
-        payment.setPaymentDate(paymentDto.getPaymentDate());
+        payment.setPaymentDate(Instant.now());
         payment.setAmount(paymentDto.getAmount());
         Payment newPayment = repository.update(payment);
         return new ModelMapper().map(newPayment , PaymentDto.class);

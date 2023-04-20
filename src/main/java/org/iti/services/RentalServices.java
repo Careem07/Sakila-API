@@ -13,13 +13,14 @@ public class RentalServices {
 
     RepositoryImpl<Rental> repository = new RepositoryImpl<>(Rental.class);
 
-    public RentalDto createRental(RentalDto RentalDto){
-        RentalDto.setLastUpdate(Instant.now());
-        Rental Rental = new ModelMapper().map(RentalDto,Rental.class);
+    public RentalDto createRental(RentalDto rentalDto){
+        rentalDto.setLastUpdate(Instant.now());
+        rentalDto.setRentalDate(Instant.now());
+        Rental Rental = new ModelMapper().map(rentalDto,Rental.class);
         if(repository.create(Rental) == null){
             return null;
         }
-        return RentalDto;
+        return rentalDto;
     }
 
     public RentalDto getRentalById(int id){

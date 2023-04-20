@@ -38,7 +38,7 @@
               implementation="org.iti.api.soap.LanguageWs" url-pattern="/ws/lang"/>
 
     <endpoint name="PaymentSOAP"
-              implementation="org.iti.api.soap.LanguageWs" url-pattern="/ws/payment"/>
+              implementation="org.iti.api.soap.PaymentWs" url-pattern="/ws/payment"/>
 
     <endpoint name="RentalSOAP"
               implementation="org.iti.api.soap.RentalWs" url-pattern="/ws/rental"/>
