@@ -5,14 +5,14 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import org.iti.model.dto.FilmDto;
-import org.iti.services.FIlmServices;
+import org.iti.services.FilmServices;
 
 import java.util.List;
 
 @Path("films")
 public class FIlmAPI  {
 
-    FIlmServices services = new FIlmServices();
+    FilmServices services = new FilmServices();
 
     @GET
     @Path("{id}")

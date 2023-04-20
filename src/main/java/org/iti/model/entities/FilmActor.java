@@ -27,13 +27,13 @@ public class FilmActor  implements Serializable {
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
 
-//    public FilmActorId getId() {
-//        return id;
-//    }
-//
-//    public void setId(FilmActorId id) {
-//        this.id = id;
-//    }
+    public FilmActorId getId() {
+        return id;
+    }
+
+    public void setId(FilmActorId id) {
+        this.id = id;
+    }
 
     public Actor getActor() {
         return actor;

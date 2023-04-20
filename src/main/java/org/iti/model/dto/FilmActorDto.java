@@ -35,21 +35,21 @@ public class FilmActorDto implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public int getActorId() {
-        return actorId;
-    }
+//    public int getActorId() {
+//        return actorId;
+//    }
 
-    public void setActorId(int actorId) {
-        this.actorId = actorId;
-    }
+//    public void setActorId(int actorId) {
+//        this.actorId = actorId;
+//    }
 
-    public int getFilmId() {
-        return filmId;
-    }
+//    public int getFilmId() {
+//        return filmId;
+//    }
 
-    public void setFilmId(int filmId) {
-        this.filmId = filmId;
-    }
+//    public void setFilmId(int filmId) {
+//        this.filmId = filmId;
+//    }
 
     public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;

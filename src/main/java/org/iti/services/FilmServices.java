@@ -1,12 +1,7 @@
 package org.iti.services;
 
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.POST;
-import org.iti.model.dto.ActorDto;
 import org.iti.model.dto.FilmDto;
 
-import org.iti.model.entities.Actor;
-import org.iti.model.entities.Film;
 import org.iti.model.entities.Film;
 import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
@@ -15,7 +10,7 @@ import org.modelmapper.TypeToken;
 import java.time.Instant;
 import java.util.List;
 
-public class FIlmServices {
+public class FilmServices {
     static RepositoryImpl<Film> repo = new RepositoryImpl<>(Film.class);
 
 

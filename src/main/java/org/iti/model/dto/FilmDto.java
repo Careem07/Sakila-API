@@ -35,6 +35,9 @@ public class FilmDto implements Serializable {
     @NotNull
     private  Instant lastUpdate;
 
+    @NotNull
+    private LanguageDto language;
+
     private  Set<FilmActorDto> filmActors;
 
     private  Set<FilmCategoryDto> filmCategories;
@@ -48,6 +51,14 @@ public class FilmDto implements Serializable {
 
     public Integer getId() {
         return id;
+    }
+
+    public LanguageDto getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageDto language) {
+        this.language = language;
     }
 
     public String getTitle() {

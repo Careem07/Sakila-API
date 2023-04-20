@@ -18,4 +18,14 @@
 
     <endpoint name="CustomerSOAP"
               implementation="org.iti.api.soap.CustomerWs" url-pattern="/ws/customer"/>
+
+    <endpoint name="FilmActorSOAP"
+              implementation="org.iti.api.soap.FilmActorWs" url-pattern="/ws/filmactor"/>
+
+    <endpoint name="FilmCategorySOAP"
+              implementation="org.iti.api.soap.FilmCategoryWs" url-pattern="/ws/filmcategory"/>
+
+    <endpoint name="FilmSOAP"
+              implementation="org.iti.api.soap.FilmWs" url-pattern="/ws/film"/>
+
 </endpoints>
