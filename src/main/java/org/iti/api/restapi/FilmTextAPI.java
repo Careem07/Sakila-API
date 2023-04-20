@@ -8,6 +8,7 @@ import org.iti.services.FilmTextServices;
 
 import java.util.List;
 
+@Path("filmtext")
 public class FilmTextAPI {
 
     FilmTextServices services = new FilmTextServices();

@@ -21,6 +21,10 @@ public class RepositoryImpl<T> implements Repository<T> {
 
     @Override
     public T create(T t) {
+        System.out.println("em.getTransaction().isActive() = " + em.getTransaction().isActive());
+        if (em.getTransaction().isActive()){
+            em.getTransaction().commit();
+        }
         try {
             em.getTransaction().begin();
             em.persist(t);

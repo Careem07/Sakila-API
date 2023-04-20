@@ -15,7 +15,6 @@ public class StaffServices {
     public StaffDto createStaff(StaffDto staffDto){
         staffDto.setLastUpdate(Instant.now());
         Staff staff = new ModelMapper().map(staffDto,Staff.class);
-        System.out.println("staff.getStoreid() = " + staff.getStoreid());
         repository.create(staff);
         return staffDto;
     }
@@ -34,5 +33,11 @@ public class StaffServices {
     public boolean removeStaff(int id){
         Staff staff = repository.findById(id);
         return repository.remove(staff);
+    }
+
+    public StaffDto updateStaff(int id , StaffDto storeDto){
+        Staff staff = repository.findById(id);
+        Staff newStaff = repository.update(staff);
+        return new ModelMapper().map(newStaff , StaffDto.class);
     }
 }

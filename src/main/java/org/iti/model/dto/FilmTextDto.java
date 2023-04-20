@@ -39,6 +39,18 @@ public class FilmTextDto implements Serializable {
         return description;
     }
 
+    public void setId(Short id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

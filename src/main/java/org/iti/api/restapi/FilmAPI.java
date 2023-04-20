@@ -5,12 +5,13 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import org.iti.model.dto.FilmDto;
+import org.iti.model.dto.FilmDto;
 import org.iti.services.FilmServices;
 
 import java.util.List;
 
 @Path("films")
-public class FIlmAPI  {
+public class FilmAPI {
 
     FilmServices services = new FilmServices();
 
@@ -47,5 +48,16 @@ public class FIlmAPI  {
             return Response.status(Response.Status.ACCEPTED).build();
         return Response.status(Response.Status.NOT_FOUND).build();
 
+    }
+
+    @PUT
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateFilm(@PathParam("id") int id, FilmDto FilmDto) {
+        FilmDto dto = services.updateFilm(id,FilmDto);
+        if(dto == null){
+            return Response.status(Response.Status.NOT_MODIFIED).build();
+        }
+        return Response.ok(dto).build();
     }
 }
