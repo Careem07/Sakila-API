@@ -3,10 +3,10 @@
 >Sakila RESTful and SOAP web service built using JAX-RS and JAX-WS.
 
 # 📃 Documentation
-* 🧼[Postman SOAP API Docs](https://solar-moon-337367.postman.co/documentation/26735313-b649cbd2-73d2-4e0e-9b1c-65bc5ae50377/publish?workspaceId=730782f6-89af-45c9-8f0e-a2de3e3cf8dd)
+* 🧼[Postman SOAP API Docs](https://documenter.getpostman.com/view/26735313/2s93Y3ugGu)
 
 
-* 📧[Postman RESTful API Docs](https://solar-moon-337367.postman.co/documentation/26735313-baf849a5-8acc-4ee3-a67f-b780ed3f4e6e/publish?workspaceId=730782f6-89af-45c9-8f0e-a2de3e3cf8dd)
+* 📧[Postman RESTful API Docs](https://documenter.getpostman.com/view/26735313/2s93Y3v154)
 
 # 📌 Sample REST Endpoints
 | Endpoints                               | Method |                                      Notes |
