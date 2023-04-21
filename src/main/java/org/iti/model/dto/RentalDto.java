@@ -34,23 +34,71 @@ public class RentalDto implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public RentalDto() {
-    }
-
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Instant getRentalDate() {
         return rentalDate;
     }
 
+    public void setRentalDate(Instant rentalDate) {
+        this.rentalDate = rentalDate;
+    }
+
     public Instant getReturnDate() {
         return returnDate;
     }
 
+    public void setReturnDate(Instant returnDate) {
+        this.returnDate = returnDate;
+    }
+
     public Instant getLastUpdate() {
         return lastUpdate;
+    }
+
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public CustomerDto getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(CustomerDto customer) {
+        this.customer = customer;
+    }
+
+    public StaffDto getStaff() {
+        return staff;
+    }
+
+    public void setStaff(StaffDto staff) {
+        this.staff = staff;
+    }
+
+    public PaymentDto getPayment() {
+        return payment;
+    }
+
+    public void setPayment(PaymentDto payment) {
+        this.payment = payment;
+    }
+
+        public InventoryDto getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryDto inventory) {
+        this.inventory = inventory;
+    }
+
+    public RentalDto() {
     }
 
     @Override
@@ -83,35 +131,5 @@ public class RentalDto implements Serializable {
                 '}';
     }
 
-//    public InventoryDto getInventory() {
-//        return inventory;
-//    }
-//
-//    public void setInventory(InventoryDto inventory) {
-//        this.inventory = inventory;
-//    }
 
-    public CustomerDto getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(CustomerDto customer) {
-        this.customer = customer;
-    }
-
-    public StaffDto getStaff() {
-        return staff;
-    }
-
-    public void setStaff(StaffDto staff) {
-        this.staff = staff;
-    }
-
-    public PaymentDto getPayment() {
-        return payment;
-    }
-
-    public void setPayment(PaymentDto payment) {
-        this.payment = payment;
-    }
 }

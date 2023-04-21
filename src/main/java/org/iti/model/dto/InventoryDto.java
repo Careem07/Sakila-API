@@ -1,5 +1,6 @@
 package org.iti.model.dto;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.validation.constraints.NotNull;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
@@ -37,16 +38,33 @@ public class InventoryDto implements Serializable {
         return id;
     }
 
-    public FilmDto getFilm() {
-        return film;
+    public void setId(Integer id) {
+        this.id = id;
     }
+
 
     public Instant getLastUpdate() {
         return lastUpdate;
     }
 
-    public Set<RentalDto> getRentals() {
-        return rentals;
+    public void setLastUpdate(Instant lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public FilmDto getFilm() {
+        return film;
+    }
+
+    public void setFilm(FilmDto film) {
+        this.film = film;
+    }
+
+    public StoreDto getStore() {
+        return store;
+    }
+
+    public void setStore(StoreDto store) {
+        this.store = store;
     }
 
     @Override
@@ -74,13 +92,5 @@ public class InventoryDto implements Serializable {
                 "rentals = " + rentals + ")";
     }
 
-    @IgnoreForBinding
-    public StoreDto getStore() {
-        return store;
-    }
 
-//    @IgnoreForBinding
-//    public void setStore(StoreDto store) {
-//        this.store = store;
-//    }
 }

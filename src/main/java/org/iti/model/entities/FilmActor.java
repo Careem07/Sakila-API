@@ -9,7 +9,6 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "film_actor")
-
 public class FilmActor  implements Serializable {
     @EmbeddedId
     private FilmActorId id;
@@ -60,4 +59,13 @@ public class FilmActor  implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
+    @Override
+    public String toString() {
+        return "FilmActor{" +
+                "id=" + id +
+                ", actor=" + actor +
+                ", film=" + film +
+                ", lastUpdate=" + lastUpdate +
+                '}';
+    }
 }

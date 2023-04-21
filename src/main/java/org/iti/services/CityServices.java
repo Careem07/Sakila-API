@@ -7,6 +7,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class CityServices {
@@ -14,7 +15,7 @@ public class CityServices {
     RepositoryImpl<City> repository = new RepositoryImpl<>(City.class);
 
     public CityDto createCity(CityDto cityDto){
-        System.out.println("cityDto.getCountry() = " + cityDto.getCountry());
+        cityDto.setLastUpdate(Instant.now());
         City city = new ModelMapper().map(cityDto,City.class);
         if(repository.create(city) == null){
             return null;

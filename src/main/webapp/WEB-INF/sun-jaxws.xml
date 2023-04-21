@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+    
+    <endpoint name="ActorSOAP"
+              implementation="org.iti.api.soap.ActorWs" url-pattern="/ws/actor"/>
+    
+    <endpoint name="AddressSOAP"
+              implementation="org.iti.api.soap.AddressWs" url-pattern="/ws/address"/>
+
+    <endpoint name="CategorySOAP"
+              implementation="org.iti.api.soap.CategoryWs" url-pattern="/ws/category"/>
+
+    <endpoint name="CitySOAP"
+              implementation="org.iti.api.soap.CityWs" url-pattern="/ws/city"/>
+
+    <endpoint name="CountrySOAP"
+              implementation="org.iti.api.soap.CountryWs" url-pattern="/ws/country"/>
+
+    <endpoint name="CustomerSOAP"
+              implementation="org.iti.api.soap.CustomerWs" url-pattern="/ws/customer"/>
+
+    <endpoint name="FilmActorSOAP"
+              implementation="org.iti.api.soap.FilmActorWs" url-pattern="/ws/filmactor"/>
+
+    <endpoint name="FilmCategorySOAP"
+              implementation="org.iti.api.soap.FilmCategoryWs" url-pattern="/ws/filmcategory"/>
+
+    <endpoint name="FilmSOAP"
+              implementation="org.iti.api.soap.FilmWs" url-pattern="/ws/film"/>
+
+    <endpoint name="FilmTextSOAP"
+              implementation="org.iti.api.soap.FilmTextWs" url-pattern="/ws/filmtext"/>
+
+    <endpoint name="InventorySOAP"
+              implementation="org.iti.api.soap.InventoryWs" url-pattern="/ws/inventory" />
+
+    <endpoint name="LanguageSOAP"
+              implementation="org.iti.api.soap.LanguageWs" url-pattern="/ws/lang"/>
+
+    <endpoint name="PaymentSOAP"
+              implementation="org.iti.api.soap.PaymentWs" url-pattern="/ws/payment"/>
+
+    <endpoint name="RentalSOAP"
+              implementation="org.iti.api.soap.RentalWs" url-pattern="/ws/rental"/>
+
+    <endpoint name="StaffSOAP"
+              implementation="org.iti.api.soap.StaffWs" url-pattern="/ws/staff"/>
+
+    <endpoint name="StoreSOAP"
+              implementation="org.iti.api.soap.StoreWs" url-pattern="/ws/store"/>
+</endpoints>

@@ -16,16 +16,16 @@ public class CityAPI {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCity(@PathParam("id") int id){
-        CityDto customerDto = services.getCityById(id);
-        if(customerDto == null) return Response.status(Response.Status.NOT_FOUND).build();
-        return Response.ok(customerDto).build();
+        CityDto cityDto = services.getCityById(id);
+        if(cityDto == null) return Response.status(Response.Status.NOT_FOUND).build();
+        return Response.ok(cityDto).build();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCities(){
-        List<CityDto> customers = services.getCities();
-        return Response.ok(customers).build();
+        List<CityDto> cities = services.getCities();
+        return Response.ok(cities).build();
     }
 
     @POST

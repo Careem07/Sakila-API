@@ -1,14 +1,11 @@
 package org.iti;
 
-import org.iti.services.AddressServices;
-import org.iti.services.CustomerServices;
-import org.iti.services.StoreServices;
+import org.iti.services.FilmActorServices;
+import org.iti.services.FilmCategoryServices;
 
 public class App {
     public static void main(String[] args) {
-        AddressServices services = new AddressServices();
-        services.getAddressById(1);
-        CustomerServices services1 = new CustomerServices();
-        services1.getCustomerById(1);
+        FilmCategoryServices services = new FilmCategoryServices();
+        System.out.println("services.getFilmActorById(1) = " + services.getFilmCategoryByCategory_Film(1,6).getCategory());
     }
 }

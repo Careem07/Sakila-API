@@ -35,11 +35,14 @@ public class FilmDto implements Serializable {
     @NotNull
     private  Instant lastUpdate;
 
-    private transient Set<FilmActorDto> filmActors;
+    @NotNull
+    private LanguageDto language;
 
-    private transient Set<FilmCategoryDto> filmCategories;
+    private  Set<FilmActorDto> filmActors;
 
-    private transient Set<InventoryDto> inventories;
+    private  Set<FilmCategoryDto> filmCategories;
+
+    private  Set<InventoryDto> inventories;
 
 
 
@@ -48,6 +51,14 @@ public class FilmDto implements Serializable {
 
     public Integer getId() {
         return id;
+    }
+
+    public LanguageDto getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageDto language) {
+        this.language = language;
     }
 
     public String getTitle() {
@@ -94,13 +105,13 @@ public class FilmDto implements Serializable {
 //        return inventories;
 //    }
 
-    public Set<FilmActorDto> getFilmActors() {
-        return filmActors;
-    }
+//    public Set<FilmActorDto> getFilmActors() {
+//        return filmActors;
+//    }
 
-    public Set<FilmCategoryDto> getFilmCategories() {
-        return filmCategories;
-    }
+//    public Set<FilmCategoryDto> getFilmCategories() {
+//        return filmCategories;
+//    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -146,13 +157,13 @@ public class FilmDto implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public void setFilmActors(Set<FilmActorDto> filmActors) {
-        this.filmActors = filmActors;
-    }
+//    public void setFilmActors(Set<FilmActorDto> filmActors) {
+//        this.filmActors = filmActors;
+//    }
 
-    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
-        this.filmCategories = filmCategories;
-    }
+//    public void setFilmCategories(Set<FilmCategoryDto> filmCategories) {
+//        this.filmCategories = filmCategories;
+//    }
 
 //    public void setInventories(Set<InventoryDto> inventories) {
 //        this.inventories = inventories;

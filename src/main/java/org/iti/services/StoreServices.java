@@ -15,6 +15,7 @@ import org.modelmapper.TypeToken;
 import org.modelmapper.convention.MatchingStrategies;
 import org.modelmapper.spi.MatchingStrategy;
 
+import java.time.Instant;
 import java.util.List;
 
 public class StoreServices {
@@ -22,6 +23,7 @@ public class StoreServices {
     RepositoryImpl<Store> repository = new RepositoryImpl<>(Store.class);
 
     public StoreDto createStore(StoreDto storeDto){
+        storeDto.setLastUpdate(Instant.now());
         Store store = new ModelMapper().map(storeDto,Store.class);
         repository.create(store);
         return storeDto;

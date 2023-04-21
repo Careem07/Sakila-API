@@ -21,6 +21,10 @@ public class RepositoryImpl<T> implements Repository<T> {
 
     @Override
     public T create(T t) {
+        System.out.println("em.getTransaction().isActive() = " + em.getTransaction().isActive());
+        if (em.getTransaction().isActive()){
+            em.getTransaction().commit();
+        }
         try {
             em.getTransaction().begin();
             em.persist(t);
@@ -35,6 +39,11 @@ public class RepositoryImpl<T> implements Repository<T> {
     @Override
     public T findById(int id) {
         return em.find(type, id);
+    }
+
+    @Override
+    public <K> T find(K k) {
+        return em.find(type,k);
     }
 
     @Override

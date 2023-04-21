@@ -7,6 +7,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 
@@ -16,7 +17,7 @@ public class ActorServices {
 
 
     public ActorDto addActor(ActorDto actorDto){
-
+        actorDto.setLastUpdate(Instant.now());
         Actor actor = new ModelMapper().map(actorDto,Actor.class);
         if(repo.create(actor) == null){
             return null;
@@ -45,7 +46,7 @@ public class ActorServices {
         Actor actor = repo.findById(id);
         actor.setFirstName(actorDto.getFirstName());
         actor.setLastName(actorDto.getLastName());
-        actor.setLastUpdate(actorDto.getLastUpdate());
+        actor.setLastUpdate(Instant.now());
         Actor newActor = repo.update(actor);
         return new ModelMapper().map(newActor,ActorDto.class);
     }

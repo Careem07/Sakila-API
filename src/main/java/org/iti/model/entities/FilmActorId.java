@@ -17,6 +17,17 @@ public class FilmActorId implements Serializable {
     @Column(name = "film_id", columnDefinition = "SMALLINT UNSIGNED not null")
     private Integer filmId;
 
+    public FilmActorId(Integer actorId) {
+        this.actorId = actorId;
+    }
+    public FilmActorId(Integer actorId, Integer filmId) {
+        this.actorId = actorId;
+        this.filmId = filmId;
+    }
+
+    public FilmActorId() {
+    }
+
     public Integer getActorId() {
         return actorId;
     }

@@ -26,11 +26,6 @@ public class ActorAPI  {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createActor(ActorDto actorDto){
-//        Instant now = Instant.now();
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        String formattedDate = formatter.format(now);
-//        ActorDto actorDto = new ActorDto(first_name,last_name, Instant.parse(formattedDate));
-
         ActorDto newActor = services.addActor(actorDto);
 
         if (newActor == null)   return Response.status(Response.Status.FORBIDDEN).build();

@@ -58,4 +58,13 @@ public class FilmCategory  implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
+    @Override
+    public String toString() {
+        return "FilmCategory{" +
+                "id=" + id +
+                ", film=" + film +
+                ", category=" + category +
+                ", lastUpdate=" + lastUpdate +
+                '}';
+    }
 }

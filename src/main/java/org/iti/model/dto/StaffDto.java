@@ -36,6 +36,8 @@ public class StaffDto implements Serializable {
     private Instant lastUpdate;
     private Set<PaymentDto> payments;
 
+    private StoreDto store;
+
     public StaffDto(Short id, String firstName, String lastName, AddressDto address, byte[] picture, String email, Boolean active, String username, String password, Instant lastUpdate, Set<PaymentDto> payments) {
         this.id = id;
         this.firstName = firstName;
@@ -58,6 +60,14 @@ public class StaffDto implements Serializable {
         this.lastName = lastName;
     }
 
+    public StoreDto getStore() {
+        return store;
+    }
+
+    public void setStore(StoreDto store) {
+        this.store = store;
+    }
+
     public Short getId() {
         return id;
     }
@@ -72,10 +82,6 @@ public class StaffDto implements Serializable {
 
     public AddressDto getAddress() {
         return address;
-    }
-
-    public byte[] getPicture() {
-        return picture;
     }
 
     public String getEmail() {
@@ -118,9 +124,6 @@ public class StaffDto implements Serializable {
         this.address = address;
     }
 
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
-    }
 
     public void setEmail(String email) {
         this.email = email;

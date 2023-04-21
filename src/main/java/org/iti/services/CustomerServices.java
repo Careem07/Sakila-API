@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.modelmapper.config.Configuration;
 
+import java.time.Instant;
 import java.util.List;
 
 public class CustomerServices {
@@ -26,6 +27,7 @@ public class CustomerServices {
     }
 
     public CustomerDto createCustomer(CustomerDto customerDto){
+        customerDto.setCreateDate(Instant.now());
         Customer customer = new ModelMapper().map(customerDto , Customer.class);
         repository.create(customer);
         return customerDto;

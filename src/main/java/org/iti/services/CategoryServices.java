@@ -8,6 +8,7 @@ import org.iti.repositories.RepositoryImpl;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 
+import java.time.Instant;
 import java.util.List;
 
 public class CategoryServices {
@@ -15,7 +16,7 @@ public class CategoryServices {
 
 
     public CategoryDto createCategory(CategoryDto categoryDto){
-
+        categoryDto.setLastUpdate(Instant.now());
         Category category = new ModelMapper().map(categoryDto,Category.class);
         if(repo.create(category) == null){
             return null;
@@ -42,7 +43,7 @@ public class CategoryServices {
     public CategoryDto updateCategory(int id , CategoryDto categoryDto){
         Category category = repo.findById(id);
         category.setName(categoryDto.getName());
-        category.setLastUpdate(categoryDto.getLastUpdate());
+        category.setLastUpdate(Instant.now());
         Category newCategory = repo.update(category);
         return new ModelMapper().map(newCategory , CategoryDto.class);
     }

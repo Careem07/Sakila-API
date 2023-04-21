@@ -26,7 +26,6 @@ public class ActorDto implements Serializable {
     @NotNull
     @JsonbDateFormat
     private  Instant lastUpdate;
-    @JsonbTransient
     private  Set<FilmActorDto> filmActors;
 
     public ActorDto() {
@@ -69,10 +68,6 @@ public class ActorDto implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public void setFilmActors(Set<FilmActorDto> filmActors) {
-        this.filmActors = filmActors;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -87,10 +82,6 @@ public class ActorDto implements Serializable {
 
     public Instant getLastUpdate() {
         return lastUpdate;
-    }
-
-    public Set<FilmActorDto> getFilmActors() {
-        return filmActors;
     }
 
     @Override
